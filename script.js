@@ -1,6 +1,6 @@
 // initialize value that will hold key the number of the clicked key
 var keyNumber;
-keysArray = Array.from(document.querySelectorAll(".key"));
+var keysArray = Array.from(document.querySelectorAll(".key"));
 
 function playSound(keyNumber) {
   // selecting matching audio element using data-key attribute value
@@ -19,18 +19,17 @@ function highlightNote(keyNumber) {
   var note = document.querySelector("div[data-key='" + keyNumber + "']");
   note.classList.toggle("playing");
   setTimeout(() => {
-      note.classList.toggle("playing");
+    note.classList.toggle("playing");
   }, 150);
 }
 
 // add keydown event listener on all key elements
 document.addEventListener("keydown", function(event) {
-    //getting code of key pressed
-    keyNumber = event.which;
-    playSound(keyNumber);
-    highlightNote(keyNumber);
+  //getting code of key pressed
+  keyNumber = event.which;
+  playSound(keyNumber);
+  highlightNote(keyNumber);
 });
-
 
 // add click event listener on all key elements
 (function getKey() {
